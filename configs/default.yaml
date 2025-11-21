@@ -1,0 +1,28 @@
+# Default configuration for BPR recommendation system
+
+model:
+  embedding_dim: 64
+  learning_rate: 0.01
+  regularization: 0.01
+  batch_size: 1024
+  num_epochs: 100
+  early_stopping_patience: 10
+
+data:
+  n_users: 1000
+  n_items: 500
+  interaction_probability: 0.1
+  test_ratio: 0.2
+  val_ratio: 0.1
+  min_interactions_per_user: 5
+  min_interactions_per_item: 5
+
+evaluation:
+  k_values: [5, 10, 20, 50]
+  metrics: ["precision", "recall", "ndcg", "map", "hit_rate"]
+
+random_seed: 42
+device: "auto"
+data_dir: "data"
+model_dir: "models"
+log_dir: "logs"
